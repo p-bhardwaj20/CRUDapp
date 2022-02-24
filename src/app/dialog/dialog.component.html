@@ -1,0 +1,48 @@
+<h1 mat-dialog-title>Add employee form</h1>
+
+<div mat-dialog-content>
+   <form [formGroup]="employeeForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Employee name</mat-label>
+        <input formControlName="employeeName" matInput placeholder="Name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Employee team</mat-label>
+       <mat-select formControlName="team" placeholder="team">
+           <mat-option value="Development">Development</mat-option>
+           <mat-option value="Testing">Testing</mat-option>
+           <mat-option value="Documentation">Documentation</mat-option>
+       </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input formControlName="date" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <label for=""><h1>Skills</h1></label>
+      <mat-radio-group formControlName="skill" class="example-radio-group">
+          <mat-radio-button class="example-radio-button" *ngFor="let skill of skillsList" [value]="skill">
+            {{skill}}
+          </mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Experience</mat-label>
+        <input formControlName="experience" matInput type="number" placeholder="Experience">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Comment</mat-label>
+        <textarea formControlName="comment" matInput></textarea>
+      </mat-form-field>
+   </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="primary" (click)="addEmployee()">{{actionBtn}}</button>
+    <button  style="margin-left: 8px;" mat-raised-button color="warn" mat-dialog-close>Close</button>
+</div>

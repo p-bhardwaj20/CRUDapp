@@ -1,0 +1,32 @@
+{
+  "employeeList": [
+    {
+      "employeeName": "Test",
+      "team": "Development",
+      "date": "2022-02-15T18:30:00.000Z",
+      "skill": "Coding",
+      "experience": 3,
+      "comment": "Test comment",
+      "id": 1
+    },
+    {
+      "employeeName": "Pratyush Bhardwaj",
+      "team": "Development",
+      "date": "2022-02-16T18:30:00.000Z",
+      "skill": "Coding",
+      "experience": 1,
+      "comment": "Edited comment",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
